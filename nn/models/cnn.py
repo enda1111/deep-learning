@@ -20,7 +20,7 @@ class CNN:
                  conv_param_6={'filter_num': 64, 'filter_size': 3, 'pad': 1, 'stride': 1},
                  hidden_size=50, output_size=10):
         pre_node_nums = np.array([
-            1 * 3 * 3,
+            3 * 3 * 3,
             16 * 3 * 3,
             16 * 3 * 3,
             32 * 3 * 3,
@@ -38,7 +38,7 @@ class CNN:
             self.params['W' + str(idx+1)] = weight_init_scales[idx] * np.random.randn(conv_param['filter_num'], pre_channel_num, conv_param['filter_size'], conv_param['filter_size'])
             self.params['b' + str(idx+1)] = np.zeros(conv_param['filter_num'])
             pre_channel_num = conv_param['filter_num']
-        self.params['W7'] = weight_init_scales[6] * np.random.randn(64*4*4, hidden_size)
+        self.params['W7'] = weight_init_scales[6] * np.random.randn(6144, hidden_size)
         self.params['b7'] = np.zeros(hidden_size)
         self.params['W8'] = weight_init_scales[7] * np.random.randn(hidden_size, output_size)
         self.params['b8'] = np.zeros(output_size)
