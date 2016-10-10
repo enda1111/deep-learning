@@ -135,3 +135,7 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+*.zip
+*.pkl
+.DS_Store
+images

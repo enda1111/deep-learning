@@ -96,6 +96,7 @@ def _make_dataset(images, labels):
     dataset['test_label'] = labels[train_idx[train_num:]]
     return dataset
 
+
 def _load_img(file_name):
     file_path = os.path.join(dataset_dir, file_name)
     pos_images = []
